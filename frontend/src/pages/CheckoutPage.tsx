@@ -321,7 +321,7 @@ const CheckoutPage = () => {
                   <div className="flex justify-between">
                     <span className="text-gray-600">Date</span>
                     <span className="font-medium text-gray-900">
-                      {format(parseISO(slot.date), 'MMM d, yyyy')}
+                      {slot.date ? format(parseISO(slot.date), 'MMM d, yyyy') : 'Date not available'}
                     </span>
                   </div>
                   <div className="flex justify-between">

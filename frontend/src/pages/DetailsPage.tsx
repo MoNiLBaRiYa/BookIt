@@ -215,7 +215,7 @@ const DetailsPage = () => {
                     Object.entries(groupedSlots).map(([date, slots]) => (
                       <div key={date} className="border rounded-lg p-3">
                         <p className="font-medium text-gray-900 mb-2">
-                          {format(parseISO(date), 'EEEE, MMMM d, yyyy')}
+                          {date ? format(parseISO(date), 'EEEE, MMMM d, yyyy') : 'Date not available'}
                         </p>
                         <div className="space-y-2">
                           {slots.map((slot) => (

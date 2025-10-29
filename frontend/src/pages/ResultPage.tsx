@@ -123,7 +123,7 @@ const ResultPage = () => {
                   <div>
                     <p className="text-sm text-gray-500">Date</p>
                     <p className="font-medium text-gray-900">
-                      {format(parseISO(bookingData.date), 'EEEE, MMMM d, yyyy')}
+                      {bookingData.date ? format(parseISO(bookingData.date), 'EEEE, MMMM d, yyyy') : 'Date not available'}
                     </p>
                   </div>
                 </div>
