@@ -205,7 +205,7 @@ const seedData = async () => {
       }
     ]);
 
-    console.log(✅ Created  experiences);
+    console.log('✅ Created experiences');
 
     // Seed Slots for each experience
     const today = new Date();
@@ -252,7 +252,7 @@ const seedData = async () => {
     }
 
     await Slot.bulkCreate(slots);
-    console.log(✅ Created  slots);
+    console.log('✅ Created slots');
 
     console.log('🎉 Database seeded successfully!');
     process.exit(0);
