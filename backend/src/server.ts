@@ -25,7 +25,7 @@ app.use('/api/bookings', bookingRoutes);
 app.use('/api/promo', promoRoutes);
 
 // Health check
-app.get('/health', (req, res) => {
+app.get('/health', (req: express.Request, res: express.Response) => {
   res.json({ status: 'ok', message: 'BookIt API is running' });
 });
 
@@ -40,19 +40,19 @@ const startServer = async () => {
   try {
     // Try to connect to database, but don't fail if it's not available
     await connectDatabase();
-    console.log('✅ Database connected successfully');
+    console.log('Database connected successfully');
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-    console.warn('⚠️  Database connection failed, running without database:', errorMessage);
-    console.log('💡 To use database features, please set up PostgreSQL and update DATABASE_URL');
+    console.warn('Database connection failed, running without database:', errorMessage);
+    console.log('To use database features, please set up PostgreSQL and update DATABASE_URL');
   }
   
   // Start server regardless of database connection
   app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-    console.log(`📍 Health check: http://localhost:${PORT}/health`);
-    console.log(`📍 API Base URL: http://localhost:${PORT}/api`);
-    console.log(`📍 Frontend: http://localhost:3000`);
+    console.log(`Server running on port ${PORT}`);
+    console.log(`Health check: http://localhost:${PORT}/health`);
+    console.log(`API Base URL: http://localhost:${PORT}/api`);
+    console.log(`Frontend: http://localhost:3000`);
   });
 };
 
