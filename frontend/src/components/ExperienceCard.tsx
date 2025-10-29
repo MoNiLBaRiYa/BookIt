@@ -52,7 +52,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
           <div>
             <span className="text-sm text-secondary-500 font-medium">Starting from</span>
             <p className="text-2xl font-bold text-secondary-900">
-              ₹{experience.price.toLocaleString()}
+              ₹{experience.price?.toLocaleString() || '0'}
               <span className="text-sm font-normal text-secondary-500 ml-1">per person</span>
             </p>
           </div>

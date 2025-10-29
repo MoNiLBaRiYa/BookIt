@@ -182,7 +182,7 @@ const DetailsPage = () => {
             <div className="card p-6 sticky top-24">
               <div className="mb-6">
                 <span className="text-gray-600">From</span>
-                <p className="text-4xl font-bold text-gray-900">₹{experience.price.toLocaleString()}</p>
+                <p className="text-4xl font-bold text-gray-900">₹{experience.price?.toLocaleString() || '0'}</p>
                 <span className="text-sm text-gray-500">per person</span>
               </div>
 
@@ -245,13 +245,13 @@ const DetailsPage = () => {
               {/* Total Price */}
               <div className="bg-gray-50 rounded-lg p-4 mb-6">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-gray-600">₹{experience.price.toLocaleString()} × {numberOfPeople} {numberOfPeople === 1 ? 'person' : 'people'}</span>
-                  <span className="font-semibold text-gray-900">₹{totalPrice.toLocaleString()}</span>
+                  <span className="text-gray-600">₹{experience.price?.toLocaleString() || '0'} × {numberOfPeople} {numberOfPeople === 1 ? 'person' : 'people'}</span>
+                  <span className="font-semibold text-gray-900">₹{totalPrice?.toLocaleString() || '0'}</span>
                 </div>
                 <div className="border-t pt-2 mt-2">
                   <div className="flex justify-between items-center">
                     <span className="font-semibold text-gray-900">Total</span>
-                    <span className="text-2xl font-bold text-primary-600">₹{totalPrice.toLocaleString()}</span>
+                    <span className="text-2xl font-bold text-primary-600">₹{totalPrice?.toLocaleString() || '0'}</span>
                   </div>
                 </div>
               </div>

@@ -171,13 +171,13 @@ const ResultPage = () => {
                   {bookingData.discount > 0 && (
                     <div className="flex justify-between text-green-600">
                       <span>Discount Applied</span>
-                      <span>-₹{bookingData.discount.toLocaleString()}</span>
+                      <span>-₹{bookingData.discount?.toLocaleString() || '0'}</span>
                     </div>
                   )}
                   <div className="flex justify-between items-center text-lg pt-2">
                     <span className="font-semibold text-gray-900">Total Paid</span>
                     <span className="text-2xl font-bold text-primary-600">
-                      ₹{bookingData.totalPrice.toLocaleString()}
+                      ₹{bookingData.totalPrice?.toLocaleString() || '0'}
                     </span>
                   </div>
                 </div>

@@ -269,7 +269,7 @@ const CheckoutPage = () => {
                 {promoApplied && discount > 0 && (
                   <p className="text-green-600 text-sm mt-2 flex items-center">
                     <Tag className="w-4 h-4 mr-1" />
-                    Promo code applied! You saved ₹{discount.toLocaleString()}
+                    Promo code applied! You saved ₹{discount?.toLocaleString() || '0'}
                   </p>
                 )}
 
@@ -338,13 +338,13 @@ const CheckoutPage = () => {
 
                 <div className="border-t pt-4 space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-600">₹{experience.price.toLocaleString()} × {numberOfPeople}</span>
-                    <span className="text-gray-900">₹{basePrice.toLocaleString()}</span>
+                    <span className="text-gray-600">₹{experience.price?.toLocaleString() || '0'} × {numberOfPeople}</span>
+                    <span className="text-gray-900">₹{basePrice?.toLocaleString() || '0'}</span>
                   </div>
                   {discount > 0 && (
                     <div className="flex justify-between text-green-600">
                       <span>Discount</span>
-                      <span>-₹{discount.toLocaleString()}</span>
+                      <span>-₹{discount?.toLocaleString() || '0'}</span>
                     </div>
                   )}
                 </div>
@@ -353,7 +353,7 @@ const CheckoutPage = () => {
                   <div className="flex justify-between items-center">
                     <span className="font-semibold text-gray-900">Total</span>
                     <span className="text-2xl font-bold text-primary-600">
-                      ₹{finalPrice.toLocaleString()}
+                      ₹{finalPrice?.toLocaleString() || '0'}
                     </span>
                   </div>
                 </div>
