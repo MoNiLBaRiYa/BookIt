@@ -3,11 +3,11 @@ import { Experience, Slot } from '../models';
 
 const seedData = async () => {
   try {
-    console.log('🌱 Starting database seed...');
+    console.log('Starting database seed...');
 
     // Clear existing data
     await sequelize.sync({ force: true });
-    console.log('✅ Database cleared');
+    console.log('Database cleared');
 
     // Seed Experiences
     const experiences = await Experience.bulkCreate([
@@ -205,7 +205,7 @@ const seedData = async () => {
       }
     ]);
 
-    console.log('✅ Created experiences');
+    console.log('Created experiences');
 
     // Seed Slots for each experience
     const today = new Date();
@@ -252,12 +252,12 @@ const seedData = async () => {
     }
 
     await Slot.bulkCreate(slots);
-    console.log('✅ Created slots');
+    console.log('Created slots');
 
-    console.log('🎉 Database seeded successfully!');
+    console.log('Database seeded successfully!');
     process.exit(0);
   } catch (error) {
-    console.error('❌ Error seeding database:', error);
+    console.error('Error seeding database:', error);
     process.exit(1);
   }
 };
