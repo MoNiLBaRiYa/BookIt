@@ -15,11 +15,22 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'https://bookit-plum.vercel.app'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(morgan('dev'));
 
 // Routes
+app.get('/', (req: express.Request, res: express.Response) => {
+  res.json({ message: 'BookIt API is running', version: '1.0.0' });
+});
+
 app.use('/api/experiences', experienceRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/promo', promoRoutes);
