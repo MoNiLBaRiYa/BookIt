@@ -15,14 +15,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(helmet());
-app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'http://localhost:5173',
-    'https://bookit-plum.vercel.app'
-  ],
-  credentials: true
-}));
+app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
