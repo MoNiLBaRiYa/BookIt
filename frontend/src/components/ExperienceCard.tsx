@@ -18,7 +18,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="absolute top-4 right-4 badge-primary shadow-soft">
-          {experience.category}
+          {experience.category || 'Adventure'}
         </div>
         <div className="absolute top-4 left-4 flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1">
           <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />

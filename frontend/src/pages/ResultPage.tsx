@@ -102,7 +102,7 @@ const ResultPage = () => {
               <div className="flex items-center justify-between mb-2">
                 <h2 className="text-xl font-bold text-gray-900">Booking Details</h2>
                 <span className="badge bg-green-100 text-green-700">
-                  {bookingData.status.toUpperCase()}
+                  {bookingData.status?.toUpperCase() || 'CONFIRMED'}
                 </span>
               </div>
               <p className="text-sm text-gray-500">Booking ID: #{bookingData.bookingId}</p>
