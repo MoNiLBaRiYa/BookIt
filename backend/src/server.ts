@@ -41,23 +41,24 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 
 // Database connection and server start
 const startServer = async () => {
+  // Start server first, then try database connection
+  const server = app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on port ${PORT}`);
+    console.log(`Health check available at /health`);
+    console.log(`API Base URL: /api`);
+  });
+
+  // Try to connect to database in background
   try {
-    // Try to connect to database, but don't fail if it's not available
     await connectDatabase();
     console.log('Database connected successfully');
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-    console.warn('Database connection failed, running without database:', errorMessage);
-    console.log('To use database features, please set up PostgreSQL and update DATABASE_URL');
+    console.warn('Database connection failed, running with mock data:', errorMessage);
+    console.log('All API endpoints will use mock data');
   }
   
-  // Start server regardless of database connection
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-    console.log(`Health check: http://localhost:${PORT}/health`);
-    console.log(`API Base URL: http://localhost:${PORT}/api`);
-    console.log(`Frontend: http://localhost:3000`);
-  });
+  return server;
 };
 
 startServer();
