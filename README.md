@@ -4,12 +4,15 @@ A fullstack web application for exploring travel experiences, selecting availabl
 
 ## 🚀 Features
 
-- **Browse Experiences**: Explore various travel experiences with filtering and search
-- **Detailed View**: View comprehensive details, highlights, and available time slots
-- **Smart Booking**: Select dates, times, and number of guests with real-time availability
-- **Promo Codes**: Apply discount codes (SAVE10, FLAT100, WELCOME20, FIRST50)
+- **Browse Experiences**: Explore 8+ curated travel experiences across India
+- **Category Filtering**: Filter by Adventure, Water Sports, Trekking, Wildlife, Leisure, Camping
+- **Search Functionality**: Search experiences by title, description, or location
+- **Detailed Experience View**: Comprehensive details, highlights, and inclusions
+- **Smart Booking System**: Select dates, times, and number of guests
+- **Promo Code Support**: Apply discount codes (SAVE10, WELCOME, ADVENTURE)
+- **Booking Confirmation**: Complete booking flow with confirmation page
 - **Responsive Design**: Fully responsive and mobile-friendly UI
-- **Real-time Updates**: Dynamic slot availability and booking confirmation
+- **Mock Data Fallback**: Works with or without database connection
 
 ## 🛠️ Tech Stack
 
@@ -200,13 +203,15 @@ This project is configured for easy deployment to cloud platforms.
    ```
 4. Deploy automatically
 
-### Detailed Deployment Guide
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for comprehensive deployment instructions.
+### Current Deployment Status
+- ✅ **Frontend**: Deployed on Vercel at [bookit-plum.vercel.app](https://bookit-plum.vercel.app)
+- ✅ **Backend**: Deployed on Render at [bookit-w1zr.onrender.com](https://bookit-w1zr.onrender.com)
+- ✅ **Database**: PostgreSQL on Render (Mock data fallback available)
 
 ## 🌐 Live Demo
 
-- **Application**: [https://bookit-experiences.vercel.app](https://bookit-experiences.vercel.app)
-- **API Documentation**: [https://bookit-backend.onrender.com/health](https://bookit-backend.onrender.com/health)
+- **Application**: [https://bookit-plum.vercel.app](https://bookit-plum.vercel.app)
+- **Backend API**: [https://bookit-w1zr.onrender.com/api](https://bookit-w1zr.onrender.com/api)
 
 ## 📝 License
 
